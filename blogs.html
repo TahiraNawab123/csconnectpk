@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | csconnect.pk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --primary-dark: #2980b9;
+            --text-dark: #2c3e50;
+            --text-light: #4a5568;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --card-bg: #f8f9fa;
+            --text-secondary: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-dark);
+        }
+
+        .nav-link {
+            color: white !important;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #6c757d;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .blog-post {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-post-header {
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .blog-post-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .blog-post-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            color: white;
+        }
+
+        .blog-post-content {
+            padding: 1.5rem;
+        }
+
+        .blog-post-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .read-more:hover {
+            transform: translateX(5px);
+            color: white;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.3em;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: #f0f0f0;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background-color: #121212; color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+        <div style="font-size: 1.8em; font-weight: 700; font-family: 'Poppins', sans-serif; letter-spacing: -0.02em;">CS Connect PK</div>
+        <ul style="list-style: none; display: flex; margin: 0; padding: 0; font-family: 'Inter', sans-serif;">
+            <li style="margin: 0 15px;"><a href="index.html" class="nav-link">Home</a></li>
+            <li style="margin: 0 15px;"><a href="events.html" class="nav-link">Events</a></li>
+            <li style="margin: 0 15px;"><a href="blogs.html" class="nav-link">Blogs</a></li>
+            <li style="margin: 0 15px;"><a href="index.html#forum" class="nav-link">Forum</a></li>
+            <li style="margin: 0 15px;"><a href="index.html#footer" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="index.html#join" class="btn btn-primary">Join Us</a>
+    </nav>
+
+    <section style="padding: 6rem 2rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 class="section-title">Our Blog</h2>
+            <p class="section-subtitle">Insights, tutorials, and discussions from our community</p>
+
+            <!-- Blog Posts -->
+            <div class="blog-post">
+                <div class="blog-post-header">
+                    <h4 class="blog-post-title">Why piracy should be avoided?</h4>
+                    <p class="blog-post-meta">Ethics & FOSS</p>
+                </div>
+                <div class="blog-post-content">
+                    <p class="blog-post-excerpt">An insightful discussion on the ethical implications of software piracy and the importance of supporting open-source alternatives:</p>
+                    <ul>
+                        <li>Understanding the impact of piracy</li>
+                        <li>Exploring free and open-source alternatives</li>
+                        <li>Making ethical choices in software usage</li>
+                    </ul>
+                    <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Author: Talha Asghar</span>
+                    </div>
+                    <a href="#" class="read-more">
+                        <i class="fas fa-book-reader"></i>
+                        Read Article
+                    </a>
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <div class="blog-post-header">
+                    <h4 class="blog-post-title">How to copy or move millions of files concurrently in linux</h4>
+                    <p class="blog-post-meta">Linux & Backend Tips</p>
+                </div>
+                <div class="blog-post-content">
+                    <p class="blog-post-excerpt">A practical guide to efficiently handling large-scale file operations in Linux:</p>
+                    <ul>
+                        <li>Using parallel processing for file operations</li>
+                        <li>Optimizing performance for large datasets</li>
+                        <li>Best practices for system resources</li>
+                    </ul>
+                    <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Author: Talha Asghar</span>
+                    </div>
+                    <a href="#" class="read-more">
+                        <i class="fas fa-book-reader"></i>
+                        Read Article
+                    </a>
+                </div>
+            </div>
+
+            <div class="blog-post">
+                <div class="blog-post-header">
+                    <h4 class="blog-post-title">Signal as alternative of WhatsApp</h4>
+                    <p class="blog-post-meta">Privacy & Messaging</p>
+                </div>
+                <div class="blog-post-content">
+                    <p class="blog-post-excerpt">A comprehensive comparison of Signal and WhatsApp for secure messaging:</p>
+                    <ul>
+                        <li>Privacy and security features</li>
+                        <li>User experience comparison</li>
+                        <li>Making the switch to Signal</li>
+                    </ul>
+                    <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem; color: var(--text-secondary);">
+                        <i class="fas fa-user-circle"></i>
+                        <span>Author: Talha Asghar</span>
+                    </div>
+                    <a href="#" class="read-more">
+                        <i class="fas fa-book-reader"></i>
+                        Read Article
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <p>&copy; 2025 CS Connect Pakistan. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | csconnect.pk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --primary-dark: #2980b9;
+            --text-dark: #2c3e50;
+            --text-light: #4a5568;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --card-bg: #f8f9fa;
+            --text-secondary: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--bg-light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-dark);
+        }
+
+        .nav-link {
+            color: white !important;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #6c757d;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.3em;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            text-align: center;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-header {
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .event-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .event-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            color: white;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .event-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .event-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .event-features i {
+            color: var(--primary-color);
+        }
+
+        .event-stats {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .event-stat {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9em;
+            color: var(--text-secondary);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #1a1a1a, #2c3e50);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: #f0f0f0;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background-color: #121212; color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+        <div style="font-size: 1.8em; font-weight: 700; font-family: 'Poppins', sans-serif; letter-spacing: -0.02em;">CS Connect PK</div>
+        <ul style="list-style: none; display: flex; margin: 0; padding: 0; font-family: 'Inter', sans-serif;">
+            <li style="margin: 0 15px;"><a href="index.html" class="nav-link">Home</a></li>
+            <li style="margin: 0 15px;"><a href="events.html" class="nav-link">Events</a></li>
+            <li style="margin: 0 15px;"><a href="blogs.html" class="nav-link">Blogs</a></li>
+            <li style="margin: 0 15px;"><a href="index.html#forum" class="nav-link">Forum</a></li>
+            <li style="margin: 0 15px;"><a href="index.html#footer" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="index.html#join" class="btn btn-primary">Join Us</a>
+    </nav>
+
+    <section style="padding: 6rem 2rem; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <h2 class="section-title">Our Events</h2>
+            <p class="section-subtitle">Join us for exciting tech events and workshops</p>
+
+            <!-- Past Events -->
+            <h3 style="font-size: 2em; margin-bottom: 2rem; color: var(--text-dark); font-weight: 600; text-align: center;">Past Events</h3>
+            
+            <div class="event-card">
+                <div class="event-header">
+                    <h4 class="event-title">From Pakistan to Ireland: The Journey of a Senior SWE</h4>
+                    <p class="event-meta">Featuring Kashif Umair Liaqat</p>
+                </div>
+                <div class="event-content">
+                    <p class="event-description">An inspiring journey of a Pakistani software engineer who made it to Ireland:</p>
+                    <ul class="event-features">
+                        <li><i class="fas fa-check-circle"></i> Career transition from Pakistan to Ireland</li>
+                        <li><i class="fas fa-check-circle"></i> International work experience insights</li>
+                        <li><i class="fas fa-check-circle"></i> Career growth strategies</li>
+                    </ul>
+                    <div class="event-stats">
+                        <span class="event-stat"><i class="fas fa-users"></i> 150+ Views</span>
+                        <span class="event-stat"><i class="fas fa-clock"></i> 45 mins</span>
+                    </div>
+                    <a href="https://youtu.be/Uy6LhfnALzw?feature=shared" target="_blank" class="btn-primary">
+                        <i class="fab fa-youtube"></i>
+                        Watch Recording
+                    </a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-header">
+                    <h4 class="event-title">Nauman Anwar: FAST, Telecom, Harvard, Business & Energy</h4>
+                    <p class="event-meta">CCPk | 003</p>
+                </div>
+                <div class="event-content">
+                    <p class="event-description">A comprehensive discussion about education, career, and business:</p>
+                    <ul class="event-features">
+                        <li><i class="fas fa-check-circle"></i> Educational journey from FAST to Harvard</li>
+                        <li><i class="fas fa-check-circle"></i> Telecom industry insights</li>
+                        <li><i class="fas fa-check-circle"></i> Business and energy sector experience</li>
+                    </ul>
+                    <div class="event-stats">
+                        <span class="event-stat"><i class="fas fa-users"></i> 200+ Views</span>
+                        <span class="event-stat"><i class="fas fa-clock"></i> 1 hour</span>
+                    </div>
+                    <a href="https://youtu.be/iSq15mG1hTc?feature=shared" target="_blank" class="btn-primary">
+                        <i class="fab fa-youtube"></i>
+                        Watch Recording
+                    </a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-header">
+                    <h4 class="event-title">Should CS Undergrads Pursue a Master's?</h4>
+                    <p class="event-meta">Featuring Hamza Azhar</p>
+                </div>
+                <div class="event-content">
+                    <p class="event-description">A detailed discussion about pursuing higher education in Computer Science:</p>
+                    <ul class="event-features">
+                        <li><i class="fas fa-check-circle"></i> Pros and cons of pursuing MS</li>
+                        <li><i class="fas fa-check-circle"></i> Career opportunities after MS</li>
+                        <li><i class="fas fa-check-circle"></i> Timing and preparation tips</li>
+                    </ul>
+                    <div class="event-stats">
+                        <span class="event-stat"><i class="fas fa-users"></i> 180+ Views</span>
+                        <span class="event-stat"><i class="fas fa-clock"></i> 40 mins</span>
+                    </div>
+                    <a href="https://youtu.be/X1G7GZIz-ag?feature=shared" target="_blank" class="btn-primary">
+                        <i class="fab fa-youtube"></i>
+                        Watch Recording
+                    </a>
+                </div>
+            </div>
+
+            <!-- Upcoming Events -->
+            <h3 style="font-size: 2em; margin: 4rem 0 2rem; color: var(--text-dark); font-weight: 600; text-align: center;">Upcoming Events</h3>
+
+            <div class="event-card">
+                <div class="event-header">
+                    <h4 class="event-title">Pakistan Tech Hackathon 2024</h4>
+                    <p class="event-meta">March 15-17, 2024 • 48 Hours</p>
+                </div>
+                <div class="event-content">
+                    <p class="event-description">Join Pakistan's biggest tech hackathon and build innovative solutions:</p>
+                    <ul class="event-features">
+                        <li><i class="fas fa-check-circle"></i> Build innovative solutions in teams</li>
+                        <li><i class="fas fa-check-circle"></i> Mentorship from industry experts</li>
+                        <li><i class="fas fa-check-circle"></i> Prizes worth PKR 500,000</li>
+                    </ul>
+                    <div class="event-stats">
+                        <span class="event-stat"><i class="fas fa-users"></i> 100 spots left</span>
+                        <span class="event-stat"><i class="fas fa-clock"></i> 48 hours</span>
+                        <span class="event-stat"><i class="fas fa-trophy"></i> Prizes</span>
+                    </div>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGEo5yFGg932sBYGcrCXs8rogV0iCWPI0H6BM_IzTQXAybJw/viewform" target="_blank" class="btn-primary">Register Now</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-header">
+                    <h4 class="event-title">AI & Machine Learning Workshop</h4>
+                    <p class="event-meta">March 20, 2024 • 2:00 PM - 4:00 PM</p>
+                </div>
+                <div class="event-content">
+                    <p class="event-description">Join us for an intensive workshop on AI and Machine Learning fundamentals:</p>
+                    <ul class="event-features">
+                        <li><i class="fas fa-check-circle"></i> Introduction to AI/ML concepts and applications</li>
+                        <li><i class="fas fa-check-circle"></i> Hands-on coding session with Python</li>
+                        <li><i class="fas fa-check-circle"></i> Real-world project implementation</li>
+                    </ul>
+                    <div class="event-stats">
+                        <span class="event-stat"><i class="fas fa-users"></i> 50 spots left</span>
+                        <span class="event-stat"><i class="fas fa-clock"></i> 2 hours</span>
+                        <span class="event-stat"><i class="fas fa-laptop-code"></i> Hands-on</span>
+                    </div>
+                    <a href="#" class="btn-primary">Register Now</a>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-header">
+                    <h4 class="event-title">Cloud Computing & DevOps</h4>
+                    <p class="event-meta">March 25, 2024 • 3:00 PM - 6:00 PM</p>
+                </div>
+                <div class="event-content">
+                    <p class="event-description">Comprehensive workshop on modern cloud and DevOps practices:</p>
+                    <ul class="event-features">
+                        <li><i class="fas fa-check-circle"></i> AWS, Azure, and GCP platform overview</li>
+                        <li><i class="fas fa-check-circle"></i> Containerization with Docker & Kubernetes</li>
+                        <li><i class="fas fa-check-circle"></i> CI/CD pipeline implementation</li>
+                    </ul>
+                    <div class="event-stats">
+                        <span class="event-stat"><i class="fas fa-users"></i> 30 spots left</span>
+                        <span class="event-stat"><i class="fas fa-clock"></i> 3 hours</span>
+                        <span class="event-stat"><i class="fas fa-laptop-code"></i> Hands-on</span>
+                    </div>
+                    <a href="#" class="btn-primary">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <p>&copy; 2025 CS Connect Pakistan. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 
